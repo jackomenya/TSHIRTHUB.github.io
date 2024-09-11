@@ -115,7 +115,7 @@ function checkout() {
 
         // Add a custom note (e.g., total price)
         const totalPrice = cart.reduce((total, item) => total + item.price, 0);
-        message += `Total Price: $${totalPrice}%0A%0AThank you for your purchase!`;
+        message += `%0AThank you`;
 
         // WhatsApp URL with pre-filled message
         const phoneNumber = "+254746809914";  // Replace with the actual WhatsApp number (international format)
