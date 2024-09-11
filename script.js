@@ -1,17 +1,17 @@
 // Sample T-shirt products
 const products = [
     { id: 1, name: 'JCOLE TEE', price: 20, image: 'images/images.png' },
-    { id: 2, name: 'V-Neck Tee', price: 25, image: 'images/2.jpg' },
-    { id: 3, name: 'Graphic Tee', price: 30, image: 'images/3.jpg' },
-    { id: 4, name: 'Long Sleeve Tee', price: 35, image: 'images/4.jpg' },
-    { id: 5, name: 'Long Sleeve Tee', price: 35, image: 'images/5.jpeg' },
-    { id: 6, name: 'Long Sleeve Tee', price: 35, image: 'images/6.jpeg' },
-    { id: 7, name: 'Long Sleeve Tee', price: 35, image: 'images/7.jpeg' },
-    { id: 8, name: 'Long Sleeve Tee', price: 35, image: 'images/8.jpeg' },
-    { id: 9, name: 'Long Sleeve Tee', price: 35, image: 'images/9.jpeg' },
-    { id: 10, name: 'Long Sleeve Tee', price: 35, image: 'images/10.jpeg' },
-    { id: 11, name: 'Long Sleeve Tee', price: 35, image: 'images/11.jpeg' },
-    { id: 12, name: 'Long Sleeve Tee', price: 35, image: 'images/12.jpeg' }
+    { id: 2, name: 'V-Neck Tee', price: 25, image: 'images/2.JPG' },
+    { id: 3, name: 'Graphic Tee', price: 30, image: 'images/3.JPG' },
+    { id: 4, name: 'Long Sleeve Tee', price: 35, image: 'images/4.JPG' },
+    { id: 5, name: 'Long Sleeve Tee', price: 35, image: 'images/5.JPEG' },
+    { id: 6, name: 'Long Sleeve Tee', price: 35, image: 'images/6.JPEG' },
+    { id: 7, name: 'Long Sleeve Tee', price: 35, image: 'images/7.JPEG' },
+    { id: 8, name: 'Long Sleeve Tee', price: 35, image: 'images/8.JPEG' },
+    { id: 9, name: 'Long Sleeve Tee', price: 35, image: 'images/9.JPEG' },
+    { id: 10, name: 'Long Sleeve Tee', price: 35, image: 'images/10.JPEG' },
+    { id: 11, name: 'Long Sleeve Tee', price: 35, image: 'images/11.JPEG' },
+    { id: 12, name: 'Long Sleeve Tee', price: 35, image: 'images/12.JPEG' }
    
 
 ];
@@ -107,23 +107,25 @@ function checkout() {
     // Confirmation popup
     const confirmation = confirm("Do you want to proceed with the checkout?");
     if (confirmation) {
-        // Prepare the cart details for WhatsApp
-        let message = "HEY ARE THIS ITEMS AVAILABLE?%0AOrder Details:%0A";
-        cart.forEach(item => {
-            message += `Product: ${item.name}%0ASize: ${item.sizes.join(', ')}%0AColor: ${item.colors.join(', ')}%0A%0A`;
-        });
+    // Prepare the cart details for WhatsApp
+    let message = "HEY, ARE THESE ITEMS AVAILABLE?%0AOrder Details:%0A";
+    cart.forEach(item => {
+        message += `Product: ${item.name}%0A`;
+        message += `Size: ${item.sizes.join(', ')}%0A`;
+        message += `Color: ${item.colors.join(', ')}%0A`;
+        message += `Product Image: ${window.location.origin}/${item.image}%0A%0A`;  // Add the product image URL
+    });
 
-        // Add a custom note (e.g., total price)
-        const totalPrice = cart.reduce((total, item) => total + item.price, 0);
-        message += `%0AThank you`;
+    // Add a custom note (e.g., total price)
+    const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+    message += `Total Price: $${totalPrice}%0A%0AThank You!`;
 
-        // WhatsApp URL with pre-filled message
-        const phoneNumber = "+254746809914";  // Replace with the actual WhatsApp number (international format)
-        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    // WhatsApp URL with pre-filled message
+    const phoneNumber = "+254746809914";  // Replace with the actual WhatsApp number (international format)
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
-        // Redirect to WhatsApp
-        window.open(whatsappUrl, '_blank');
-    }
+    // Redirect to WhatsApp
+    window.open(whatsappUrl, '_blank');
 }
 
 // Load cart from local storage on page load
