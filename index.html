@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-Shirt Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">T-Shirt Hub</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#cart">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Welcome to T-Shirt Hub</h1>
+        <p>Find your perfect T-shirt today!</p>
+        <button onclick="scrollToProducts()">Shop Now</button>
+    </section>
+
+    <section id="products" class="products">
+        <h2>Our T-Shirts</h2>
+        <div class="product-list" id="productList"></div>
+    </section>
+
+    <section id="cart" class="cart">
+        <h2>Your Cart</h2>
+        <div id="cartItems"></div>
+        <button id="checkoutButton">Checkout</button>
+    </section>
+
+    <!-- Modal for viewing more product details -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalProductName"></h2>
+            <img id="modalProductImage" src="" alt="Product Image">
+            <p id="modalProductPrice"></p>
+            
+            <form id="productOptions">
+                <h3>Select Size</h3>
+                <label><input type="checkbox" name="size" value="Small"> Small</label><br>
+                <label><input type="checkbox" name="size" value="Medium"> Medium</label><br>
+                <label><input type="checkbox" name="size" value="Large"> Large</label><br>
+                <label><input type="checkbox" name="size" value="XL"> XL</label><br>
+
+                <h3>Select Color</h3>
+                <label><input type="checkbox" name="color" value="Red"> Red</label><br>
+                <label><input type="checkbox" name="color" value="Blue"> Blue</label><br>
+                <label><input type="checkbox" name="color" value="Black"> Black</label><br>
+                <label><input type="checkbox" name="color" value="White"> White</label><br>
+            </form>
+            <button onclick="addToCartWithOptions()">Add to Cart</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 T-Shirt Hub</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
