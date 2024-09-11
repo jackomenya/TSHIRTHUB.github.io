@@ -107,26 +107,27 @@ function checkout() {
     // Confirmation popup
     const confirmation = confirm("Do you want to proceed with the checkout?");
     if (confirmation) {
-    // Prepare the cart details for WhatsApp
-    let message = "HEY, ARE THESE ITEMS AVAILABLE?%0AOrder Details:%0A";
-    cart.forEach(item => {
-        message += `Product: ${item.name}%0A`;
-        message += `Size: ${item.sizes.join(', ')}%0A`;
-        message += `Color: ${item.colors.join(', ')}%0A`;
-        message += `Product Image: ${window.location.origin}/${item.image}%0A%0A`;  // Add the product image URL
-    });
+        // Prepare the cart details for WhatsApp
+        let message = "HEY, ARE THESE ITEMS AVAILABLE?%0AOrder Details:%0A";
+        cart.forEach(item => {
+            message += `Product: ${item.name}%0A`;
+            message += `Size: ${item.sizes.join(', ')}%0A`;
+            message += `Color: ${item.colors.join(', ')}%0A%0A`;
+        });
 
-    // Add a custom note (e.g., total price)
-    const totalPrice = cart.reduce((total, item) => total + item.price, 0);
-    message += `Total Price: $${totalPrice}%0A%0AThank You!`;
+        // Add a custom note (e.g., total price)
+        const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+        message += `Total Price: $${totalPrice}%0A%0AThank You!`;
 
-    // WhatsApp URL with pre-filled message
-    const phoneNumber = "+254746809914";  // Replace with the actual WhatsApp number (international format)
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+        // WhatsApp URL with pre-filled message
+        const phoneNumber = "+254746809914";  // Replace with the actual WhatsApp number (international format)
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
-    // Redirect to WhatsApp
-    window.open(whatsappUrl, '_blank');
+        // Redirect to WhatsApp
+        window.open(whatsappUrl, '_blank');
+    }
 }
+
 
 // Load cart from local storage on page load
 window.onload = () => {
