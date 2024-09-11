@@ -1,17 +1,17 @@
 // Sample T-shirt products
 const products = [
     { id: 1, name: 'JCOLE TEE', price: 20, image: 'images/images.png' },
-    { id: 2, name: 'V-Neck Tee', price: 25, image: 'images/2.JPG' },
-    { id: 3, name: 'Graphic Tee', price: 30, image: 'images/3.JPG' },
-    { id: 4, name: 'Long Sleeve Tee', price: 35, image: 'images/4.JPG' },
-    { id: 5, name: 'Long Sleeve Tee', price: 35, image: 'images/5.JPEG' },
-    { id: 6, name: 'Long Sleeve Tee', price: 35, image: 'images/6.JPEG' },
-    { id: 7, name: 'Long Sleeve Tee', price: 35, image: 'images/7.JPEG' },
-    { id: 8, name: 'Long Sleeve Tee', price: 35, image: 'images/8.JPEG' },
-    { id: 9, name: 'Long Sleeve Tee', price: 35, image: 'images/9.JPEG' },
-    { id: 10, name: 'Long Sleeve Tee', price: 35, image: 'images/10.JPEG' },
-    { id: 11, name: 'Long Sleeve Tee', price: 35, image: 'images/11.JPEG' },
-    { id: 12, name: 'Long Sleeve Tee', price: 35, image: 'images/12.JPEG' }
+    { id: 2, name: 'V-Neck Tee', price: 25, image: 'images/2.jpg' },
+    { id: 3, name: 'Graphic Tee', price: 30, image: 'images/3.jpg' },
+    { id: 4, name: 'Long Sleeve Tee', price: 35, image: 'images/4.jpg' },
+    { id: 5, name: 'Long Sleeve Tee', price: 35, image: 'images/5.jpeg' },
+    { id: 6, name: 'Long Sleeve Tee', price: 35, image: 'images/6.jpeg' },
+    { id: 7, name: 'Long Sleeve Tee', price: 35, image: 'images/7.jpeg' },
+    { id: 8, name: 'Long Sleeve Tee', price: 35, image: 'images/8.jpeg' },
+    { id: 9, name: 'Long Sleeve Tee', price: 35, image: 'images/9.jpeg' },
+    { id: 10, name: 'Long Sleeve Tee', price: 35, image: 'images/10.jpeg' },
+    { id: 11, name: 'Long Sleeve Tee', price: 35, image: 'images/11.jpeg' },
+    { id: 12, name: 'Long Sleeve Tee', price: 35, image: 'images/12.jpeg' }
    
 
 ];
